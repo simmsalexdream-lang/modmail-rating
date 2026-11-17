@@ -12,11 +12,11 @@ class RatingSelect(discord.ui.Select):
         self.thread_id = thread_id
 
         options = [
-            discord.SelectOption(label="5 Stars - Excellent", value="5", emoji="⭐"),
-            discord.SelectOption(label="4 Stars - Good", value="4", emoji="⭐"),
-            discord.SelectOption(label="3 Stars - Average", value="3", emoji="⭐"),
-            discord.SelectOption(label="2 Stars - Poor", value="2", emoji="⭐"),
-            discord.SelectOption(label="1 Star - Terrible", value="1", emoji="⭐"),
+            discord.SelectOption(label="5 Stars - Excellent", value="5", emoji="<:J2STAR:1563697501939310652>"),
+            discord.SelectOption(label="4 Stars - Good", value="4", emoji="<:J2STAR:1563697501939310652>"),
+            discord.SelectOption(label="3 Stars - Average", value="3", emoji="<:J2STAR:1563697501939310652>"),
+            discord.SelectOption(label="2 Stars - Poor", value="2", emoji="<:J2STAR:1563697501939310652>"),
+            discord.SelectOption(label="1 Star - Terrible", value="1", emoji="<:J2STAR:1563697501939310652>"),
         ]
         super().__init__(
             placeholder="Select a rating for your support experience...",
@@ -31,7 +31,7 @@ class RatingSelect(discord.ui.Select):
         # Disable the dropdown after the user makes a selection
         self.disabled = True
         await interaction.response.edit_message(
-            content=f"Thank you! You rated our support **{rating}/5** stars.",
+            content=f"> Thank you! You rated our support **{rating}/5** stars.",
             view=self.view,
         )
 
@@ -46,7 +46,7 @@ class RatingSelect(discord.ui.Select):
 
             embed = discord.Embed(
                 title="New Support Rating",
-                color=discord.Color.gold(),
+                color=0x006F50,
             )
             embed.add_field(
                 name="User",
@@ -60,7 +60,7 @@ class RatingSelect(discord.ui.Select):
             )
             embed.add_field(
                 name="Rating",
-                value=f"{'⭐' * int(rating)} ({rating}/5)",
+                value=f"{'<:J2STAR:1563697501939310652>' * int(rating)} ({rating}/5)",
                 inline=False,
             )
             embed.set_footer(text=f"Thread ID: {self.thread_id}")
@@ -89,9 +89,9 @@ class ServiceRating(commands.Cog):
             return
 
         embed = discord.Embed(
-            title="How did we do?",
-            description="Your support ticket has been closed. Please take a moment to rate the service you received using the dropdown below.",
-            color=discord.Color.blurple(),
+            title="## <:J2TAIL:1563712563974381681> How did we do?",
+            description="> Your support ticket has been resolved and closed. We would appreciate it if you could take a moment to rate the service you received using the dropdown menu below. For additional feedback regarding your assistance, please visit [__this form.__](https://forms.gle/YJT2y4LkCDJVzwPm7)",
+            color=11669520,
         )
 
         try:
