@@ -89,7 +89,7 @@ class ServiceRating(commands.Cog):
             return
 
         embed = discord.Embed(
-            title="## <:J2TAIL:1563712563974381681> How did we do?",
+            title="<:J2TAIL:1563712563974381681> How did we do?",
             description="> Your support ticket has been resolved and closed. We would appreciate it if you could take a moment to rate the service you received using the dropdown menu below. For additional feedback regarding your assistance, please visit [__this form.__](https://forms.gle/YJT2y4LkCDJVzwPm7)",
             color=11669520,
         )
